@@ -7,7 +7,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura
 | Component        | Details                            |
 | ---------------- | ---------------------------------- |
 | CPU              | Intel i5 - 6300u                   |
-| dGPU             | Intel® HD Graphics 520             |
+| iGPU             | Intel® HD Graphics 520             |
 | SSD              | Samsung 870 evo                    |
 | Wi-Fi            | Intel AC-8260                      |
 | SmBios           | MacbookPro 14,1                    |
@@ -92,4 +92,6 @@ This is what I figured out :
 
 You should try one of these combination to achieve best quality of touchpad gestures.
 
-Plus, you may try adjust parameters in thinkpad_clickpad.aml to achieve better touchpad responsiveness.
+Plus, thinkpad_clickpad.aml file also contribute touchpad functionality.
+
+You may try to adjust parameter of thinkpad_clickpad.aml or disable it to achieve better touchpad responsiveness and functionality.

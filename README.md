@@ -71,8 +71,7 @@ https://github.com/corpnewt/GenSMBIOS
 
 ### Disable : 
 
-Secure boot
-CSM Support
+Secure boot / CSM Support
 
             
 ## Trials to fix touchpad gestures.

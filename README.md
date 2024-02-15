@@ -76,7 +76,7 @@ Secure boot / CSM Support
 
 X270 uses i2c synaptic touchpad, so you may use voodooi2c.kexts with one of three satelite.kexts
 
-VoodooI2C : https://github.com/VoodooI2C/VoodooI2C/releases
+VoodooI2C (Contains VoodooI2CHID and VoodooI2CSynaptics) : https://github.com/VoodooI2C/VoodooI2C/releases
 
 VoodooRMI : https://github.com/VoodooSMBus/VoodooRMI/releases
 

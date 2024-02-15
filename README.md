@@ -42,7 +42,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 ### Bugs:
 
 - 3 Finger gestures of Touchpad are quiet buggy
-- Touchpad only work under polling mode
+- Touchpad only works under polling mode
 - Thinkpad X270 is impossible to unlock MSR 0xE2 register, therefore there are a lot of "AppleCpuPmCfgLock" related bugs
 
 
@@ -50,9 +50,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 
 This hackintosh EFI uses MacbookPro 14,1 SMBIOS.
 
-Create your own MacbookPro 14,1 SMBIOS with GenSMBIOS for ventura
-
-or MacbookPro 13,1 for monterey.
+Create your own MacbookPro 14,1 SMBIOS with GenSMBIOS for ventura or MacbookPro 13,1 for monterey.
 
 https://github.com/corpnewt/GenSMBIOS
 

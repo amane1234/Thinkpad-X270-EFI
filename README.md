@@ -43,7 +43,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 
 - 3 Finger gestures of Touchpad are quiet buggy
 - Touchpad only works under polling mode
-- Thinkpad X270 is impossible to unlock MSR 0xE2 register, therefore there are a lot of "AppleCpuPmCfgLock" related bugs
+- Since Thinkpad X270 is impossible to unlock MSR 0xE2 register, there are a lot of "AppleCpuPmCfgLock" related bugs
 
 
 ## SMBIOS
@@ -76,6 +76,12 @@ Secure boot / CSM Support
 
 X270 uses i2c synaptic touchpad, so you may use voodooi2c.kexts with one of three satelite.kexts
 
+VoodooI2C : https://github.com/VoodooI2C/VoodooI2C/releases
+
+VoodooRMI : https://github.com/VoodooSMBus/VoodooRMI/releases
+
+
+
 This is what I figured out :
 
 - Voodooi2c + VoodooI2CHID : Gives the best touchpad gestures for this X270
@@ -85,3 +91,5 @@ This is what I figured out :
 - Voodooi2c + VoodooI2CSynaptics : Unable to load VoodooI2CSynaptics.kext, thus the worst touchpad gesture and functionality for this X270.
 
 You should try one of these combination to achieve best quality of touchpad gestures.
+
+Plus, you may try adjust parameters in thinkpad_clickpad.aml to achieve better touchpad responsiveness.

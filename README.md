@@ -92,6 +92,6 @@ This is what I figured out :
 
 You should try one of these combination to achieve best quality of touchpad gestures.
 
-Plus, thinkpad_clickpad.aml file also contribute touchpad functionality.
+Plus, "SSDT-ThinkPad_ClickPad.aml" file also contribute touchpad functionality.
 
-You may try to adjust parameter of thinkpad_clickpad.aml or disable it to achieve better touchpad responsiveness and functionality.
+You may try to adjust parameter of "SSDT-ThinkPad_ClickPad.aml" or disable it to achieve better touchpad responsiveness and functionality.

@@ -54,7 +54,7 @@ This hackintosh EFI uses MacbookPro 14,1 SMBIOS.
 Create your own MacbookPro 14,1 SMBIOS with GenSMBIOS for ventura or MacbookPro 13,1 for monterey.
 
 https://github.com/corpnewt/GenSMBIOS
-
+<br><br>
 
 
 ## _MacOS bootable USB creation_
@@ -62,7 +62,7 @@ https://github.com/corpnewt/GenSMBIOS
 - Read the Dortania guide for creating your USB from Windows or macOS
 - [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
 - Download EFI and copy it to your USB drive.
-
+<br><br>
 
 
 ## _Bios settings_
@@ -71,14 +71,14 @@ https://github.com/corpnewt/GenSMBIOS
 ### Enable : 
 
 - Intel VT-d
-  
+  <br>
 
 ### Disable : 
 
 - Secure boot
 
 - CSM Support
-
+<br><br>
             
 ## _Trials to fix touchpad gestures with touchpad buttons_
 

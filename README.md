@@ -90,7 +90,7 @@ This is what I figured out :
 
 - VoodooPS2 + VoodooSMBus + VoodooRMI(SMBUS plugin) : Gives the best touchpad gestures for this X270, unable to use touchpad buttons.
 
-- VoodooPS2 + VoodooI2C(VoodooGPIO.kext) : Shows mediocre gesture functionality and able to use both touchpad and touchpad buttons. VoodooSMBus.kext seems not working.
+- VoodooPS2 + VoodooGPIO.kext : Shows mediocre gesture functionality and able to use both touchpad and touchpad buttons.
 
 Plus, "SSDT-ThinkPad_ClickPad.aml" file also contribute touchpad functionality.
 

@@ -43,7 +43,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 
 - 3 Finger gestures of Touchpad are quiet buggy
 - Touchpad only works under polling mode
-- Since Thinkpad X270 is impossible to unlock MSR 0xE2 register, there are a lot of "AppleCpuPmCfgLock" related bugs (Usually power managements and sleep-related-functions)
+- Since Thinkpad X270 is impossible to unlock cfg-lock related register, there are a lot of "AppleCpuPmCfgLock" related bugs (Usually power managements and sleep-related-functions)
   <br><br>
 
 

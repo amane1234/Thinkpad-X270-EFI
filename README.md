@@ -2,6 +2,8 @@
 Lenovo Thinkpad X270 opencore EFI for Ventura
 
 
+
+
 ## _Laptop Spec_
 
 | Component        | Details                            |

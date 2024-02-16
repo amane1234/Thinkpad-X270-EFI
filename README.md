@@ -67,9 +67,16 @@ https://github.com/corpnewt/GenSMBIOS
 ## Bios settings
 
 
+### Enable : 
+
+- Intel VT-d
+
+
 ### Disable : 
 
-Both Secure boot / CSM Support must be disabled
+- Secure boot
+
+- CSM Support
 
             
 ## Trials to fix touchpad gestures with touchpad buttons.

@@ -26,6 +26,7 @@ Since this EFI uses itlwm, you need to download Heliport.dmg
 itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
 
 Heliport : https://github.com/OpenIntelWireless/HeliPort
+<br><br>
 
 
 ## _Functions / Bugs_
@@ -35,8 +36,7 @@ Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 Every function works except Apple airportcard required ones, such as sidecar and airdrop. 
 
-You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly. (If you can remove whitelist by bios modding)
-
+You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly. (If you can remove whitelist by bios modding)<br>
 
 
 ### Bugs:
@@ -44,6 +44,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 - 3 Finger gestures of Touchpad are quiet buggy
 - Touchpad only works under polling mode
 - Since Thinkpad X270 is impossible to unlock MSR 0xE2 register, there are a lot of "AppleCpuPmCfgLock" related bugs
+  <br><br>
 
 
 ## _SMBIOS_

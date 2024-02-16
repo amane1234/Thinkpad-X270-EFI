@@ -74,9 +74,7 @@ Both Secure boot / CSM Support must be disabled
             
 ## Trials to fix touchpad gestures.
 
-X270 uses i2c synaptic touchpad, so you may use voodooi2c.kexts with one of three satelite.kexts
-
-VoodooI2C (Contains VoodooI2CHID and VoodooI2CSynaptics) : https://github.com/VoodooI2C/VoodooI2C/releases
+X270 uses SMBUS synaptic touchpad, so you may use voodooSMBUS.kexts with one of satelite.kexts
 
 VoodooRMI : https://github.com/VoodooSMBus/VoodooRMI/releases
 
@@ -84,13 +82,9 @@ VoodooRMI : https://github.com/VoodooSMBus/VoodooRMI/releases
 
 This is what I figured out :
 
-- Voodooi2c + VoodooI2CHID : Gives the best touchpad gestures for this X270
+- VoodooPS2 + VoodooSMBus + VoodooRMI(SMBUS plugin) : Gives the best touchpad gestures for this X270, unable to use touchpad buttons.
 
-- Voodooi2c + VoodooRMI : Although a lot of synaptic machines decided to use VoodooRMI kext due to great functionality, it gives mediocre gesture function performance for this X270.
-
-- Voodooi2c + VoodooI2CSynaptics : Unable to load VoodooI2CSynaptics.kext, thus the worst touchpad gesture and functionality for this X270.
-
-You should try one of these combination to achieve best quality of touchpad gestures.
+- VoodooPS2 + VoodooI2C : Mediocre gesture, able to use both touchpad and touchpad buttons, VoodooSMBus.kext seems not working.
 
 Plus, "SSDT-ThinkPad_ClickPad.aml" file also contribute touchpad functionality.
 

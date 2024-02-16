@@ -9,7 +9,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura
 | CPU              | Intel i5 - 6300u                   |
 | iGPU             | Intel® HD Graphics 520             |
 | SSD              | Samsung 870 evo                    |
-| Wi-Fi            | Intel AC-8260                      |
+| Wireless         | Intel AC-8260                      |
 | SmBios           | MacbookPro 14,1                    |
 | BootLoader       | OpenCore 0.9.8                     |
 | macOS            | Ventura                            |

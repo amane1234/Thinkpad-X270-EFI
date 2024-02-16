@@ -17,7 +17,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura <br><br>
 <br><br>
 
 
-## _Intel WIFI/BT_
+## _To use Intel WIFI_
 
 You need to manually download and install either itlwm.kext or airportitlwm.kext (Do not load both kexts at once) to use intel WIFI,
 

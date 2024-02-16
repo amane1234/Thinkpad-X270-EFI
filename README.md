@@ -2,7 +2,7 @@
 Lenovo Thinkpad X270 opencore EFI for Ventura
 
 
-## Laptop Spec
+## _Laptop Spec_
 
 | Component        | Details                            |
 | ---------------- | ---------------------------------- |
@@ -17,7 +17,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura
 
 
 
-## Intel WIFI/BT
+## _Intel WIFI/BT_
 
 You need to manually download and install either itlwm.kext or airportitlwm.kext (Do not load both kexts at once) to use intel WIFI,
 
@@ -28,7 +28,7 @@ itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
 Heliport : https://github.com/OpenIntelWireless/HeliPort
 
 
-## Function / Bugs
+## _Functions / Bugs_
 
 
 ### Functions:
@@ -46,7 +46,7 @@ You may swap your wifi card into natively supported devices BCM94360 or BCM94350
 - Since Thinkpad X270 is impossible to unlock MSR 0xE2 register, there are a lot of "AppleCpuPmCfgLock" related bugs
 
 
-## SMBIOS
+## _SMBIOS_
 
 This hackintosh EFI uses MacbookPro 14,1 SMBIOS.
 
@@ -56,7 +56,7 @@ https://github.com/corpnewt/GenSMBIOS
 
 
 
-## MacOS bootable USB creation
+## _MacOS bootable USB creation_
 
 - Read the Dortania guide for creating your USB from Windows or macOS
 - [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
@@ -64,13 +64,13 @@ https://github.com/corpnewt/GenSMBIOS
 
 
 
-## Bios settings
+## _Bios settings_
 
 
 ### Enable : 
 
 - Intel VT-d
-
+  
 
 ### Disable : 
 
@@ -79,7 +79,7 @@ https://github.com/corpnewt/GenSMBIOS
 - CSM Support
 
             
-## Trials to fix touchpad gestures with touchpad buttons.
+## _Trials to fix touchpad gestures with touchpad buttons_
 
 X270 uses SMBUS synaptic touchpad, so you may use voodooSMBUS.kexts with one of satelite.kexts
 
@@ -91,6 +91,7 @@ This is what I figured out :
 - VoodooPS2 + VoodooSMBus + VoodooRMI(SMBUS plugin) : Gives the best touchpad gestures for this X270, unable to use touchpad buttons.
 
 - VoodooPS2 + VoodooGPIO.kext : Shows mediocre gesture functionality and able to use both touchpad and touchpad buttons.
+  
 
 Plus, "SSDT-ThinkPad_ClickPad.aml" file also contribute touchpad functionality.
 

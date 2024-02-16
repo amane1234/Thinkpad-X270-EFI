@@ -1,5 +1,5 @@
 # **Thinkpad-X270-EFI**
-Lenovo Thinkpad X270 opencore EFI for Ventura <br><br><br>
+Lenovo Thinkpad X270 opencore EFI for Ventura <br><br>
 
 
 ## _Laptop Spec_
@@ -13,8 +13,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura <br><br><br>
 | SmBios           | MacbookPro 14,1                    |
 | BootLoader       | OpenCore 0.9.8                     |
 | macOS            | Ventura                            |
-
-
+<br><br>
 
 
 ## _Intel WIFI/BT_

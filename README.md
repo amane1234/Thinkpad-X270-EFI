@@ -13,6 +13,7 @@ Lenovo Thinkpad X270 opencore EFI for Ventura <br><br>
 | SmBios           | MacbookPro 14,1                    |
 | BootLoader       | OpenCore 0.9.8                     |
 | macOS            | Ventura                            |
+
 <br><br>
 
 

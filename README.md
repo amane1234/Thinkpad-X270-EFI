@@ -1,99 +1,123 @@
-# **Thinkpad-X270-EFI**
-Lenovo Thinkpad X270 opencore EFI for Ventura <br><br>
+# **ThinkPad X270 EFI - OpenCore for macOS Ventura**
 
+EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS Ventura.
 
-## _Laptop Spec_
+---
 
-| Component        | Details                            |
-| ---------------- | ---------------------------------- |
-| CPU              | Intel i5 - 6300u                   |
-| iGPU             | Intel® HD Graphics 520             |
-| SSD              | Samsung 870 evo                    |
-| Wireless         | Intel AC-8260                      |
-| SmBios           | MacbookPro 14,1                    |
-| BootLoader       | OpenCore 0.9.8                     |
-| macOS            | Ventura                            |
+## _Laptop Specifications_
 
-<br><br>
+| **Component**      | **Details**                       |
+| ------------------ | --------------------------------- |
+| **CPU**            | Intel i5-6300U                    |
+| **iGPU**           | Intel HD Graphics 520             |
+| **SSD**            | Samsung 870 EVO                   |
+| **Wireless**       | Intel AC-8260                     |
+| **SMBIOS**         | MacBookPro 14,1                   |
+| **Bootloader**     | OpenCore 0.9.8                    |
+| **macOS Version**  | macOS Ventura                     |
 
+---
 
-## _To use Intel WIFI_
+## _Intel Wi-Fi Support_
 
-You need to manually download and install either itlwm.kext or airportitlwm.kext (Do not load both kexts at once) to use intel WIFI,
+For Intel Wi-Fi functionality, you need to manually install either the **itlwm.kext** or **airportitlwm.kext** (but **do not load both kexts at the same time**).
 
-Since this EFI uses itlwm, you need to download Heliport.dmg
+This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to manage the Wi-Fi connection.
 
-itlwm / Airportitlwm : https://github.com/OpenIntelWireless/itlwm
+### Required Kexts:
+- **itlwm / airportitlwm**: [GitHub - itlwm](https://github.com/OpenIntelWireless/itlwm)
+- **HeliPort** (Wi-Fi management tool): [GitHub - HeliPort](https://github.com/OpenIntelWireless/HeliPort)
 
-Heliport : https://github.com/OpenIntelWireless/HeliPort
-<br><br>
+---
 
+## _System Functionality & Known Issues_
 
-## _Functions / Bugs_
-
-
-### Functions:
-
-Every function works except Apple airportcard required ones, such as sidecar and airdrop. 
-
-You may swap your wifi card into natively supported devices BCM94360 or BCM94350 with OCLP patcher to work these functions properly. (If you can remove whitelist by bios modding)<br>
-
-
-### Bugs:
-
-- 3 Finger gestures of Touchpad are quiet buggy
-- Touchpad only works under polling mode
-- Since Thinkpad X270 is impossible to unlock cfg-lock related register, there are a lot of "AppleCpuPmCfgLock" related bugs (Usually power managements and sleep-related-functions)
-  <br><br>
-
-
-## _SMBIOS_
-
-This hackintosh EFI uses MacbookPro 14,1 SMBIOS.
-
-Create your own MacbookPro 14,1 SMBIOS with GenSMBIOS for ventura or MacbookPro 13,1 for monterey.
-
-https://github.com/corpnewt/GenSMBIOS
-<br><br>
-
-
-## _MacOS bootable USB creation_
-
-- Read the Dortania guide for creating your USB from Windows or macOS
-- [Guide Dortania](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) - USB creation
-- Download EFI and copy it to your USB drive.
-<br><br>
-
-
-## _Bios settings_
-
-
-### Enable : 
-
-- Intel VT-d
-  <br>
-
-### Disable : 
-
-- Secure boot
-
-- CSM Support
-<br><br>
-            
-## _Trials to fix touchpad gestures with touchpad buttons_
-
-X270 uses SMBUS synaptic touchpad, so you may use voodooSMBUS.kexts with one of satelite.kexts
-
-VoodooRMI : https://github.com/VoodooSMBus/VoodooRMI/releases
-
-
-This is what I figured out :
-
-- VoodooPS2 + VoodooSMBus + VoodooRMI(SMBUS plugin) : Gives the best touchpad gestures and responsiveness for this X270, but unable to use touchpad buttons.
-
-- VoodooPS2 + VoodooGPIO.kext : Shows mediocre gesture functionality/responsiveness. Able to use both touchpad and touchpad buttons.
+### **Working Features**:
+- **Full system functionality**: Everything works as expected, except Apple-specific features like **Sidecar** and **AirDrop**, which require an Apple Airport Card.
   
+- **Wi-Fi**: Works well with the **itlwm** kext and HeliPort.
 
-Plus, "SSDT-ThinkPad_ClickPad.aml" file also contributes touchpad functionality as well.
+### **Suggested Fixes**:
+- **Wi-Fi Replacement**: If you want to use **Sidecar** or **AirDrop**, you may swap your current Wi-Fi card with a Mac-supported card, such as the **BCM94360** or **BCM94350**. These cards are supported out of the box on macOS, and you can use the **OpenCore Legacy Patcher (OCLP)** to apply the necessary patches.
 
-You may try to adjust parameter of "SSDT-ThinkPad_ClickPad.aml" or simply disable it to achieve better touchpad responsiveness and functionality.
+### **Known Bugs**:
+- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently.
+- **Touchpad Behavior**: The touchpad only works under polling mode, which might cause responsiveness issues.
+- **Power Management & Sleep**: Due to the inability to unlock **CFG-Lock** on the X270, there are several bugs related to **AppleCpuPmCfgLock**, particularly with power management and sleep functions.
+
+---
+
+## _SMBIOS Configuration_
+
+This EFI uses the **MacBookPro 14,1** SMBIOS, which is ideal for Intel Skylake and Kaby Lake CPUs.
+
+### Create Your Own SMBIOS:
+To generate or modify your **MacBookPro 14,1** SMBIOS (for Ventura), or switch to **MacBookPro 13,1** (for Monterey), you can use **GenSMBIOS**.
+
+- [GenSMBIOS GitHub Repository](https://github.com/corpnewt/GenSMBIOS)
+
+---
+
+## _Creating a macOS Bootable USB_
+
+Follow the **Dortania** guide to create a bootable macOS USB from either Windows or macOS:
+
+- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
+
+### Steps:
+1. **Download the EFI folder** from this guide and copy it to your USB drive.
+2. Replace the **SMBIOS** parameters with your own values.
+3. Follow the Dortania guide to ensure your USB is correctly prepared for macOS installation.
+
+---
+
+## _BIOS Settings for ThinkPad X270_
+
+To ensure proper compatibility with macOS, adjust the following BIOS settings:
+
+### **Enable**:
+- **Intel VT-d**: This is necessary for macOS to run smoothly.
+
+### **Disable**:
+- **Secure Boot**: Disable this to avoid issues with OpenCore booting.
+- **CSM Support (Compatibility Support Module)**: Disable to ensure that macOS boots in UEFI mode.
+
+---
+
+## _Touchpad Gestures Fixes_
+
+The **ThinkPad X270** uses a **Synaptics SMBus** touchpad, and achieving good touchpad functionality on macOS can require some trial and error with different kexts. Below are the methods that work best for this model:
+
+### **Recommended Kexts**:
+1. **VoodooPS2 + VoodooSMBus + VoodooRMI (SMBUS plugin)**:  
+   This combination provides the best touchpad gestures and responsiveness, but **touchpad buttons may not work**.
+
+2. **VoodooPS2 + VoodooGPIO.kext**:  
+   This setup results in **mediocre gesture functionality**, but it allows the **touchpad buttons** to function.
+
+### Additional Fixes:
+- **SSDT-ThinkPad_ClickPad.aml**:  
+   This SSDT file helps improve touchpad functionality. You can experiment with its parameters or disable it to adjust responsiveness.
+
+### Download Links:
+- **VoodooSMBus and VoodooRMI**: [VoodooSMBus GitHub](https://github.com/VoodooSMBus/VoodooRMI/releases)
+- **VoodooGPIO.kext**: [VoodooGPIO GitHub](https://github.com/RehabMan/VoodooGPIO)
+
+---
+
+## _Post-Install Notes_
+
+### Improving Battery Life & Sleep:
+- **Power Management**: Given the CFG-Lock limitations, power management may not be optimal, but you can experiment with the following settings to improve sleep behavior and battery life:
+
+  ```bash
+  sudo pmset -a standby 0
+  sudo pmset -a autopoweroff 0
+  sudo pmset -a powernap 0
+  sudo pmset -a proximitywake 0
+  sudo pmset -a tcpkeepalive 0
+  ```
+
+- **Enable S3 Sleep**: S4 sleep (hibernation) has significant issues on this system. Stick with S3 sleep mode for better stability.
+
+---

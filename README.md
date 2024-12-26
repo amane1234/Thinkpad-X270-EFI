@@ -84,27 +84,6 @@ To ensure proper compatibility with macOS, adjust the following BIOS settings:
 
 ---
 
-## _Touchpad Gestures Fixes_
-
-The **ThinkPad X270** uses a **Synaptics SMBus** touchpad, and achieving good touchpad functionality on macOS can require some trial and error with different kexts. Below are the methods that work best for this model:
-
-### **Recommended Kexts**:
-1. **VoodooPS2 + VoodooSMBus + VoodooRMI (SMBUS plugin)**:  
-   This combination provides the best touchpad gestures and responsiveness, but **touchpad buttons may not work**.
-
-2. **VoodooPS2 + VoodooGPIO.kext**:  
-   This setup results in **mediocre gesture functionality**, but it allows the **touchpad buttons** to function.
-
-### Additional Fixes:
-- **SSDT-ThinkPad_ClickPad.aml**:  
-   This SSDT file helps improve touchpad functionality. You can experiment with its parameters or disable it to adjust responsiveness.
-
-### Download Links:
-- **VoodooSMBus and VoodooRMI**: [VoodooSMBus GitHub](https://github.com/VoodooSMBus/VoodooRMI/releases)
-- **VoodooGPIO.kext**: [VoodooGPIO GitHub](https://github.com/RehabMan/VoodooGPIO)
-
----
-
 ## _Post-Install Notes_
 
 ### Improving Battery Life & Sleep:

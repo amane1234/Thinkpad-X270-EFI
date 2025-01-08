@@ -28,7 +28,7 @@ This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to 
 
 ---
 
-## _ Known Issues_
+## _Known Issues_
 
 - **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to poor hardware.
 - **Touchpad Behavior**: The touchpad only works under polling mode, which might cause responsiveness issues. Need fix

@@ -11,9 +11,9 @@ EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS Ven
 | **CPU**            | Intel i5-6300U                    |
 | **iGPU**           | Intel HD Graphics 520             |
 | **SSD**            | Samsung 870 EVO                   |
-| **Wireless**       | Intel AC-8260                     |
+| **Wireless**       | Intel AC-8260ngw                  |
 | **SMBIOS**         | MacBookPro 14,1                   |
-| **Bootloader**     | OpenCore 0.9.8                    |
+| **Bootloader**     | OpenCore 1.0.3                    |
 | **macOS Version**  | macOS Ventura                     |
 
 ---
@@ -24,26 +24,15 @@ For Intel Wi-Fi functionality, you need to manually install either the **itlwm.k
 
 This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to manage the Wi-Fi connection.
 
-### Required Kexts:
-- **itlwm / airportitlwm**: [GitHub - itlwm](https://github.com/OpenIntelWireless/itlwm)
-- **HeliPort** (Wi-Fi management tool): [GitHub - HeliPort](https://github.com/OpenIntelWireless/HeliPort)
+**HeliPort** (Wi-Fi management tool): [GitHub - HeliPort](https://github.com/OpenIntelWireless/HeliPort)
 
 ---
 
-## _System Functionality & Known Issues_
+## _ Known Issues_
 
-### **Working Features**:
-- **Full system functionality**: Everything works as expected, except Apple-specific features like **Sidecar** and **AirDrop**, which require an Apple Airport Card.
-  
-- **Wi-Fi**: Works well with the **itlwm** kext and HeliPort.
-
-### **Suggested Fixes**:
-- **Wi-Fi Replacement**: If you want to use **Sidecar** or **AirDrop**, you may swap your current Wi-Fi card with a Mac-supported card, such as the **BCM94360** or **BCM94350**. These cards are supported out of the box on macOS, and you can use the **OpenCore Legacy Patcher (OCLP)** to apply the necessary patches.
-
-### **Known Bugs**:
-- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently.
-- **Touchpad Behavior**: The touchpad only works under polling mode, which might cause responsiveness issues.
-- **Power Management & Sleep**: Due to the inability to unlock **CFG-Lock** on the X270, there are several bugs related to **AppleCpuPmCfgLock**, particularly with power management and sleep functions.
+- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to poor hardware.
+- **Touchpad Behavior**: The touchpad only works under polling mode, which might cause responsiveness issues. Need fix
+- **Power Management & Sleep**: Due to the inability to unlock **CFG-Lock** on the X270, there are several bugs related to **AppleCpuPmCfgLock**, particularly with power management and sleep functions. (Some laptops from Lenovo such as T480, T490, does not requre AppleCpuPmCfgLock in order to work, you may try boot without it at first)
 
 ---
 
@@ -96,7 +85,5 @@ To ensure proper compatibility with macOS, adjust the following BIOS settings:
   sudo pmset -a proximitywake 0
   sudo pmset -a tcpkeepalive 0
   ```
-
-- **Enable S3 Sleep**: S4 sleep (hibernation) has significant issues on this system. Stick with S3 sleep mode for better stability.
 
 ---

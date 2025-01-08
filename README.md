@@ -86,5 +86,6 @@ To ensure proper compatibility with macOS, adjust the following BIOS settings:
   sudo pmset -a tcpkeepalive 0
   ```
   
-### Combojack install: Open the terminal and run the install.sh script from the TOOLS Combojack/ComboJack_Installer.zip directory to enable the headphone jack functionality. After rebooting, the jack should appear as a usable device.
+### Combojack install: 
+- Open the terminal and run the install.sh script from the TOOLS Combojack/ComboJack_Installer.zip directory to enable the headphone jack functionality. After rebooting, the jack should appear as a usable device.
 ---

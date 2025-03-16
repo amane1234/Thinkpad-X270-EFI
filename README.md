@@ -75,13 +75,10 @@ To ensure proper compatibility with macOS, adjust the following BIOS settings:
 
 ## _Post-Install Notes_
 
-### Improving Battery Life & Sleep:
+### Improving Battery Life & Sleep (Not required):
 - **Power Management**: Given the CFG-Lock limitations, power management may not be optimal, but you can experiment with the following settings to improve sleep behavior and battery life:
 
   ```bash
-  sudo pmset -a standby 0
-  sudo pmset -a autopoweroff 0
-  sudo pmset -a powernap 0
   sudo pmset -a proximitywake 0
   sudo pmset -a tcpkeepalive 0
   ```

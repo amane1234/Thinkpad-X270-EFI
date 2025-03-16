@@ -89,3 +89,20 @@ To ensure proper compatibility with macOS, adjust the following BIOS settings:
 ### Combojack install: 
 - Open the terminal and run the install.sh script from the TOOLS Combojack/ComboJack_Installer.zip directory to enable the headphone jack functionality. After rebooting, the jack should appear as a usable device.
 ---
+
+## (Experimental) Enabling Hibernation (S4) function
+
+To enable **S4 Hibernation (Write-to-Disk)**, follow these steps:
+
+1. Set `ThirdpartyDrives` to `true` in your `config.plist`. (Required only when using an HDD or SATA SSD)
+2. Set `Hibernatemode` to `Auto` in the `config.plist`.
+3. Open the terminal and run:  
+   ```
+   sudo pmset hibernatemode 3
+   ```
+If hibernation function is still not working,
+
+4. Put `Hibernationfixup.kext` to your EFI and add `hbfx-ahbm=37` to your boot-args [Hibernationfixup](https://github.com/acidanthera/HibernationFixup)
+5. Put `RTCMemoryFixup.kext` to your EFI and add `rtcfx_exclude=0x80-0xAB,0xB0-0xB4` to your boot-args [RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)
+
+This will put your laptop into sleep mode (S3) initially, and then transition to hibernation (S4) after a set period of time.

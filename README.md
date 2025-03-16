@@ -2,7 +2,7 @@
 
 EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS Ventura.
 
----
+Since the EFI folder from the source may not be up-to-date, I recommend downloading it from the Releases section instead.
 
 ## _Laptop Specifications_
 

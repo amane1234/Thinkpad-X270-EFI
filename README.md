@@ -90,3 +90,9 @@ If the hibernation function is still not working,
 This will put your laptop into sleep mode (S3) initially, and then transition to hibernation (S4) after a set period of time.
 
 ---
+
+## Touchpad configuration (VoodooSMBus)
+
+One may configure touchpad behaviours such as TrackpointDeadzone, DisableWhileTypingTimeout, PalmRejectionWidth with SSDT.
+[Hibernationfixup]([https://github.com/acidanthera/HibernationFixup](https://github.com/VoodooSMBus/VoodooRMI?tab=readme-ov-file#configuration))
+

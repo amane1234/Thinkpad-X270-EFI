@@ -94,5 +94,5 @@ This will put your laptop into sleep mode (S3) initially, and then transition to
 ## Touchpad configuration (VoodooSMBus)
 
 One may configure touchpad behaviours such as TrackpointDeadzone, DisableWhileTypingTimeout, PalmRejectionWidth with SSDT.
-[Hibernationfixup]([https://github.com/acidanthera/HibernationFixup](https://github.com/VoodooSMBus/VoodooRMI?tab=readme-ov-file#configuration))
+[Hibernationfixup](https://github.com/VoodooSMBus/VoodooRMI?tab=readme-ov-file#configuration)
 

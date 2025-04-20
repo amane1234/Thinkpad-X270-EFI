@@ -60,11 +60,6 @@ Follow the **Dortania** guide to create a bootable macOS USB from either Windows
 
 ## _BIOS Settings for ThinkPad X270_
 
-To ensure proper compatibility with macOS, adjust the following BIOS settings:
-
-### **Enable**:
-- **Intel VT-d**: This is necessary for macOS to run smoothly.
-
 ### **Disable**:
 - **Secure Boot**: Disable this to avoid issues with OpenCore booting.
 - **CSM Support (Compatibility Support Module)**: Disable to ensure that macOS boots in UEFI mode.

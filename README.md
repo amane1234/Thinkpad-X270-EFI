@@ -1,4 +1,4 @@
-# **ThinkPad X270 EFI - OpenCore for macOS **
+# **ThinkPad X270 EFI - OpenCore for macOS**
 
 EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS Ventura.
 

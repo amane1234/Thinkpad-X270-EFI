@@ -1,6 +1,6 @@
 # **ThinkPad X270 EFI - OpenCore for macOS**
 
-EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS Ventura.
+EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS.
 
 Since the EFI folder from the source may not be up-to-date, I recommend downloading it from the Releases section instead.
 
@@ -28,9 +28,12 @@ This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to 
 
 ---
 
-## _Known Issues_
+## _Bugs_
 
-- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to bad hardware.
+- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to bad touchpad hardware. No way to fix it.
+- **CMOS reset with Hibernation** : There is a conflict between CMOS and Hackintosh when the system goes hibernation (S4 sleep), triggering a CMOS-reset. 
+This symptom can be fix by rtcfx_exclude=0x80-0xAB,0xB0-0xB4 with RTCMemoryFixup.kext.
+If the symptom still exist, one have to manually find the bad RTC memory region. [RTC reset fix](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)
 
 ---
 
@@ -80,7 +83,7 @@ To enable **S4 Hibernation (Write-to-Disk)**, follow these steps:
 If the hibernation function is still not working,
 
 4. Put `Hibernationfixup.kext` to your EFI and add `hbfx-ahbm=129` to your boot-args [Hibernationfixup](https://github.com/acidanthera/HibernationFixup)
-5. Put `RTCMemoryFixup.kext` to your EFI and add `rtcfx_exclude=0x80-0xAB` to your boot-args [RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)
+5. Put `RTCMemoryFixup.kext` to your EFI and add `rtcfx_exclude=0x80-0xAB,0xB0-0xB4` to your boot-args [RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)
 
 This will put your laptop into sleep mode (S3) initially, and then transition to hibernation (S4) after a set period of time.
 

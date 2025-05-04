@@ -32,7 +32,7 @@ This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to 
 
 - **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to bad touchpad hardware. No way to fix it.
   
-- **CMOS reset with Hibernation** : There is a conflict between CMOS and Hackintosh when the system goes hibernation (S4 sleep), which triggers a CMOS-reset. 
+- **CMOS reset with Hibernation** : A conflict between CMOS and Hackintosh occurs during system hibernation (S4 sleep), resulting in a CMOS reset.
 This symptom can be fix by rtcfx_exclude=0x80-0xAB,0xB0-0xB4 with RTCMemoryFixup.kext.
 If the symptom still exist, one have to manually find the bad RTC memory region. [RTC reset fix](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)
 

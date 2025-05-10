@@ -70,6 +70,13 @@ Follow the **Dortania** guide to create a bootable macOS USB from either Windows
 
 ---
 
+
+## _3.5mm headphone jack enable_
+
+To enable 3.5mm headphone jack, you need to install combojack [Combojack](https://github.com/macos86/ComboJack)
+
+---
+
 ## (Experimental) Enabling Hibernation (S4) function
 
 To enable **S4 Hibernation (Write-to-Disk)**, follow these steps:

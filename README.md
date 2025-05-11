@@ -1,7 +1,3 @@
-Here's a more concise and streamlined version of your text with unnecessary words removed and language tightened for clarity:
-
----
-
 # **ThinkPad X270 OpenCore EFI for macOS**
 
 EFI for Lenovo ThinkPad X270 using OpenCore, compatible with macOS.

@@ -38,10 +38,7 @@ This EFI uses **itlwm**, so you'll need **[HeliPort](https://github.com/OpenInte
 
 ## *SMBIOS Configuration*
 
-Uses **MacBookPro 14,1**, ideal for Skylake/Kaby Lake CPUs.
 Generate or modify SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
-Use **MacBookPro 13,1** for Monterey if needed.
-
 
 ---
 

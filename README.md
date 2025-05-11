@@ -1,104 +1,90 @@
-# **ThinkPad X270 EFI - OpenCore for macOS**
-
-EFI for Lenovo ThinkPad X270 with OpenCore bootloader, compatible with macOS.
-
-Since the EFI folder from the source may not be up-to-date, I recommend downloading it from the Releases section instead.
-
-## _Laptop Specifications_
-
-| **Component**      | **Details**                       |
-| ------------------ | --------------------------------- |
-| **CPU**            | Intel i5-6300U                    |
-| **iGPU**           | Intel HD Graphics 520             |
-| **SSD**            | Samsung 870 EVO                   |
-| **Wireless**       | Intel AC-8260ngw                  |
-| **SMBIOS**         | MacBookPro 14,1                   |
-| **Bootloader**     | OpenCore 1.0.3                    |
-| **macOS Version**  | macOS Ventura                     |
+Here's a more concise and streamlined version of your text with unnecessary words removed and language tightened for clarity:
 
 ---
 
-## _Intel Wi-Fi Support_
+# **ThinkPad X270 OpenCore EFI for macOS**
 
-For Intel Wi-Fi functionality, you need to manually install either the **itlwm.kext** or **airportitlwm.kext** (but **do not load both kexts at the same time**).
-
-This EFI configuration uses **itlwm**, so you must download **HeliPort.dmg** to manage the Wi-Fi connection.
-
-**HeliPort** (Wi-Fi management tool): [GitHub - HeliPort](https://github.com/OpenIntelWireless/HeliPort)
+EFI for Lenovo ThinkPad X270 using OpenCore, compatible with macOS.
+For the latest version, download from the [Releases](https://github.com/amane1234/Thinkpad-X270-EFI/releases) section instead of using the source folder.
 
 ---
 
-## _Bugs_
+## *Laptop Specifications*
 
-- **Touchpad Gestures**: The 3-finger gestures are quite buggy and may not work consistently due to bad touchpad hardware. No way to fix it.
-  
-- **CMOS reset with Hibernation** : A conflict between CMOS and Hackintosh occurs during system hibernation (S4 sleep), resulting in a CMOS reset.
-This symptom can be fix by rtcfx_exclude=0x80-0xAB,0xB0-0xB4 with RTCMemoryFixup.kext.
-If the symptom still exist, one have to manually find the bad RTC memory region. [RTC reset fix](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)
-
----
-
-## _SMBIOS Configuration_
-
-This EFI uses the **MacBookPro 14,1** SMBIOS, which is ideal for Intel Skylake and Kaby Lake CPUs.
-
-### Create Your Own SMBIOS:
-To generate or modify your **MacBookPro 14,1** SMBIOS (for Ventura), or switch to **MacBookPro 13,1** (for Monterey), you can use **GenSMBIOS**.
-
-- [GenSMBIOS GitHub Repository](https://github.com/corpnewt/GenSMBIOS)
+| **Component**     | **Details**           |
+| ----------------- | --------------------- |
+| **CPU**           | Intel i5-6300U        |
+| **iGPU**          | Intel HD Graphics 520 |
+| **SSD**           | Samsung 870 EVO       |
+| **Wireless**      | Intel AC-8260ngw      |
+| **SMBIOS**        | MacBookPro 14,1       |
+| **Bootloader**    | OpenCore 1.0.3        |
+| **macOS Version** | macOS Ventura         |
 
 ---
 
-## _Creating a macOS Bootable USB_
+## *Intel Wi-Fi Support*
 
-Follow the **Dortania** guide to create a bootable macOS USB from either Windows or macOS:
-
-- [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
-
-### Steps:
-1. **Download the EFI folder** from this guide and copy it to your USB drive.
-2. Replace the **SMBIOS** parameters with your own values.
-3. Follow the Dortania guide to ensure your USB is correctly prepared for macOS installation.
+To enable Wi-Fi, install either **itlwm.kext** or **airportitlwm.kext** — not both.
+This EFI uses **itlwm**, so you'll need **[HeliPort](https://github.com/OpenIntelWireless/HeliPort)** for Wi-Fi management.
 
 ---
 
-## _BIOS Settings for ThinkPad X270_
+## *Known Issues*
 
-### **Disable**:
-- **Secure Boot**: Disable this to avoid issues with OpenCore booting.
-- **CSM Support (Compatibility Support Module)**: Disable to ensure that macOS boots in UEFI mode.
+* **Touchpad Gestures**: 3-finger gestures are unstable due to poor hardware; no fix available.
+* **CMOS Reset During Hibernation**: Causes CMOS reset. Fix with:
 
----
-
-
-## _3.5mm headphone jack enable_
-
-To enable 3.5mm headphone jack, you need to install combojack [Combojack](https://github.com/macos86/ComboJack)
+  * `rtcfx_exclude=0x80-0xAB,0xB0-0xB4` in boot-args with `RTCMemoryFixup.kext`
+  *  If the issue persists, manually identify the faulty RTC region: [RTC Reset Fix Guide](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)
 
 ---
 
-## (Experimental) Enabling Hibernation (S4) function
+## *SMBIOS Configuration*
 
-To enable **S4 Hibernation (Write-to-Disk)**, follow these steps:
+Uses **MacBookPro 14,1**, ideal for Skylake/Kaby Lake CPUs.
+Generate or modify SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS).
+Use **MacBookPro 13,1** for Monterey if needed.
 
-1. Set `ThirdpartyDrives` to `true` in your `config.plist`. (Required only when using an HDD or SATA SSD)
-2. Set `Hibernatemode` to `Auto` in the `config.plist`.
-3. Open the terminal and run:  
+
+---
+
+## *BIOS Settings for ThinkPad X270*
+
+**Disable**:
+
+* Secure Boot
+* CSM (Compatibility Support Module)
+
+---
+
+## *Enable 3.5mm Headphone Jack*
+
+Install [ComboJack](https://github.com/macos86/ComboJack) to enable the headphone jack.
+
+---
+
+## *(Experimental)* Enable Hibernation (S4)
+
+1. Set `ThirdpartyDrives=true` and `Hibernatemode=NVRAM` in `config.plist`
+2. Run in Terminal:
+
    ```
    sudo pmset -a hibernatemode 3
    sudo pmset -a standby 1
    ```
-If the hibernation function is still not working,
+3. If it still doesn’t work, add:
 
-4. Put `Hibernationfixup.kext` to your EFI and add `hbfx-ahbm=129` to your boot-args [Hibernationfixup](https://github.com/acidanthera/HibernationFixup)
-5. Put `RTCMemoryFixup.kext` to your EFI and add `rtcfx_exclude=0x80-0xAB,0xB0-0xB4` to your boot-args [RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)
+   * `Hibernationfixup.kext` with `hbfx-ahbm=129`
+   * `RTCMemoryFixup.kext` with `rtcfx_exclude=0x80-0xAB,0xB0-0xB4`
 
-This will put your laptop into sleep mode (S3) initially, and then transition to hibernation (S4) after a set period of time.
+This enables transition from S3 (sleep) to S4 (hibernation).
 
 ---
 
-## Touchpad configuration (VoodooSMBus)
+## *Touchpad Configuration (VoodooSMBus)*
 
-One may configure touchpad behaviours such as TrackpointDeadzone, DisableWhileTypingTimeout, PalmRejectionWidth with SSDT.
-[VoodooSMBus](https://github.com/VoodooSMBus/VoodooRMI?tab=readme-ov-file#configuration)
+Configure touchpad settings (e.g., TrackpointDeadzone, PalmRejectionWidth) via SSDT:
+[VoodooSMBus Configuration](https://github.com/VoodooSMBus/VoodooRMI?tab=readme-ov-file#configuration)
 
+---

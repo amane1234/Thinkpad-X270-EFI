@@ -51,12 +51,6 @@ Generate or modify SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS
 
 ---
 
-## *Enable 3.5mm Headphone Jack*
-
-Install [ComboJack](https://github.com/macos86/ComboJack) to enable the headphone jack.
-
----
-
 ## *(Experimental)* Enable Hibernation (S4)
 
 1. Set `ThirdpartyDrives=true` and `Hibernatemode=NVRAM` in `config.plist`

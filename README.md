@@ -63,7 +63,7 @@ Generate or modify SMBIOS with [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS
 3. If it still doesn’t work, add:
 
    * `Hibernationfixup.kext` with `hbfx-ahbm=129`
-   * `RTCMemoryFixup.kext` with `rtcfx_exclude=0x80-0xAB,0xB0-0xB4`
+   * `RTCMemoryFixup.kext` with `rtcfx_exclude=80-AB`
    * Enable `DiscardHibernatemap` at `config.plist`
 
 ---

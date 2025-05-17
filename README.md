@@ -13,7 +13,7 @@ For the latest version, download from the [Releases](https://github.com/amane123
 | **iGPU**          | Intel HD Graphics 520 |
 | **SSD**           | Samsung 870 EVO       |
 | **Wireless**      | Intel AC-8260ngw      |
-| **SMBIOS**        | MacBookPro 14,1       |
+| **SMBIOS**        | MacBookPro 13,1       |
 | **Bootloader**    | OpenCore 1.0.3        |
 | **macOS Version** | macOS Ventura         |
 

@@ -31,7 +31,7 @@ This EFI uses **itlwm**, so you'll need **[HeliPort](https://github.com/OpenInte
 * **Touchpad Gestures**: 3-finger gestures are unstable due to poor hardware; no fix available.
 * **CMOS Reset after waking up from Hibernation**: Fix with:
 
-  * `rtcfx_exclude=0x80-0xAB,0xB0-0xB4` in boot-args with `RTCMemoryFixup.kext`
+  * `rtcfx_exclude=0x80-0xAB` in boot-args with `RTCMemoryFixup.kext`
   *  If the issue persists, manually identify the faulty RTC region: [RTC Reset Fix Guide](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)
 
 ---
